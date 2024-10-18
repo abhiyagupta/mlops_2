@@ -13,17 +13,26 @@ Key Features
 Dataset split into train, test, validation for inference:
 ![image](https://github.com/user-attachments/assets/411ead5e-96f0-40a9-9253-e3acd6a6ad99)
 
+
 Training:
 ![image](https://github.com/user-attachments/assets/ad679726-194c-4551-85e9-233af1527427)
+
 
 Testing:
 ![image](https://github.com/user-attachments/assets/e1fa6543-4069-4fb4-a104-ddcd84781519)
 
+
 Dockerization:
 ![image](https://github.com/user-attachments/assets/6b1475c2-fc89-42c5-8a68-beb5ba9db676)
 
+
 Code cover:
 ![image](https://github.com/user-attachments/assets/73a6d387-d9e5-4ea6-9ee6-1fa4536a1bd6)
+
+
+after adding eval and infer to code cover and py test:
+![-6093894539996676295_120](https://github.com/user-attachments/assets/7c5ab017-5c62-4edb-90d2-5889e1e9fa5a)
+
 
 
 Predictions:
