@@ -82,16 +82,16 @@ def evaluate(
     test_loader = datamodule.test_dataloader()
 
     base_dir = cfg.paths.output_dir
-    ckpt_path = get_latest_checkpoint(base_dir)
-    log.info(f"Using checkpoint: {ckpt_path}")    
-
-    if (ckpt_path):
+    try:
+        ckpt_path = get_latest_checkpoint(base_dir)
+        log.info(f"Using checkpoint: {ckpt_path}")    
         log.info(f"Loading checkpoint: {ckpt_path}")
-        test_metrics = trainer.test(model, dataloaders=test_loader, ckpt_path=ckpt_path)
-    else:
-        log.warning("No checkpoint path provided. Using current model weights.")
-        test_metrics = trainer.test(model, dataloaders=test_loader)
+        test_metrics = trainer.test(model=model, dataloaders=test_loader, ckpt_path=ckpt_path)
+    except FileNotFoundError:
+        log.warning("No checkpoint found. Using current model weights.")
+        test_metrics = trainer.test(model=model, dataloaders=test_loader)
     log.info(f"Test metrics:\n{test_metrics}")
+    return test_metrics
   
 
 @hydra.main(version_base="1.3", config_path="../configs", config_name="eval")

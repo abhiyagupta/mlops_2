@@ -2,9 +2,8 @@
 source = src
 
 [report]
-omit =
-    src/eval.py
-    src/infer.py
+
+    
 
 show_missing = true
  
